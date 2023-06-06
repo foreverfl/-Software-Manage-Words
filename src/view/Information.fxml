@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:controller="controller.InformationController"
+	maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+	minWidth="-Infinity" prefHeight="400.0" prefWidth="310.0"
+	xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<HBox prefHeight="102.0" prefWidth="310.0"
+			style="-fx-background-color: white;">
+			<children>
+				<ImageView fitHeight="85.0" fitWidth="79.0"
+					pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../resources/icon/icon.png" />
+					</image>
+					<HBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</HBox.margin>
+				</ImageView>
+				<VBox prefHeight="99.0" prefWidth="219.0">
+					<children>
+						<Label alignment="CENTER" prefHeight="99.0"
+							prefWidth="219.0"
+							style="-fx-font-size: 20; -fx-font-family: SanSerif; -fx-font-weight: bold;"
+							text="Photo Manager" />
+						<Label alignment="TOP_RIGHT" prefHeight="14.0"
+							prefWidth="212.0" style="-fx-font-size: 15;" text="v 1.1.0">
+							<padding>
+								<Insets right="30.0" />
+							</padding>
+						</Label>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+		<VBox prefHeight="295.0" prefWidth="310.0">
+			<children>
+				<Label fx:id="detail" alignment="TOP_LEFT" prefHeight="297.0"
+					prefWidth="309.0" wrapText="true"
+					style="-fx-font-size: 12;">
+					<padding>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+				</Label>
+			</children>
+		</VBox>
+		<VBox alignment="CENTER_RIGHT" prefHeight="58.0"
+			prefWidth="310.0">
+			<children>
+				<Button fx:id="confirm" mnemonicParsing="false" text="확인">
+					<VBox.margin>
+						<Insets left="10.0" right="10.0" />
+					</VBox.margin>
+				</Button>
+			</children>
+		</VBox>
+	</children>
+</VBox>

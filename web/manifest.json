@@ -1,0 +1,54 @@
+{
+  "name": "NaverToExcel",
+  "description": "네이버 영어사전의 내용을 엑셀로 옮겨줍니다.(개인용)",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "activeTab", "tabs", "scripting", "webNavigation"],
+  "host_permissions": ["https://learn.dict.naver.com/*"],
+
+  "action": {
+    "default_icon": {
+      "16": "/images/naver.png",
+      "32": "/images/naver.png",
+      "48": "/images/naver.png",
+      "128": "/images/naver.png"
+    },
+    "default_title": "Click to view a popup",
+    "default_popup": "popup.html"
+  },
+
+  "icons": {
+    "16": "/images/naver.png",
+    "32": "/images/naver.png",
+    "48": "/images/naver.png",
+    "128": "/images/naver.png"
+  },
+
+  "background": {
+    "service_worker": "./js/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "js": ["./js/contentScript.js"],
+      "matches": ["https://learn.dict.naver.com/wordbook/enkodict/*"],
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Q",
+        "mac": "Ctrl+Q"
+      }
+    }
+  }
+}
